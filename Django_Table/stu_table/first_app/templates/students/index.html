@@ -1,0 +1,51 @@
+<!-- templates/students/student_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Roll Number</th>
+                <th>Stream</th>
+                <th>Course</th>
+                <th>Semester</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in record %}
+            <tr>
+                <td>{{ student.fname }}</td>
+                <td>{{ student.lname }}</td>
+                <td>{{ student.uni_rollno }}</td>
+                <td>{{ student.stream }}</td>
+                <td>{{ student.course }}</td>
+                <td>{{ student.semester }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">No students available</td>
+            </tr>
+            {% endfor %}
+            <h1>Total Students</h1>
+            <p style="font-size:20px">The number of students in Student Table are:{{record.count}}</p>
+            <p style="font-size:20px">Name of students whose name starts with M:</p>
+            <ul>
+                {% for student in stu_fname_with_m %}
+                <li>{{ student.fname }} {{ student.lname }}</li>
+                {% empty %}
+                <li>No students whose name starts with 'M'.</li>
+                {% endfor %}
+            </ul>
+
+        </tbody>
+    </table>
+</body>
+</html>
