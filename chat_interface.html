@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VJCET-BOT</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            #main-container {
+            display: flex;
+            width: 600px;
+            height: 600px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+       
+        #sidebar {
+            width: 150px;
+            background-color: #FFA500;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            align-items: normal;
+            padding: 20px;
+            box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #header-logo {
+           width: 100px;      
+           height: 100px; 
+           object-fit: contain; 
+           margin-bottom: 20px;
+        }
+
+        #header-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        
+        #chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+        #chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .message {
+            margin: 10px 0;
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .bot-message {
+            align-self:flex-end;
+            background-color: #e4e6eb;
+            color: black;
+            text-align: right;
+            margin-left: auto;
+        }
+
+        
+        #chat-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+            background-color: #f4f4f9;
+        }
+        #sidebar-buttons
+        {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          padding-top: 268px;
+          align-items: center;
+        }
+        .sidebar-btn
+        {
+          
+          color: black;
+          background-color: #fefdfd;
+          align-items: center;
+          padding: 10px;
+          border: 1px solid #ccc;
+          cursor: pointer;
+          font-size: 15px;
+          width:150px;
+        }
+
+        #chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        #chat-input button {
+            padding: 10px;
+            background-color: #FFD580;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #chat-input button:hover {
+            background-color: #0056b3;
+        }
+       #exit-button {
+           background-color: #f44336; 
+           color: white;
+           border: none;
+           padding: 10px 15px;
+           margin-top: 20px; 
+           cursor: pointer;
+           border-radius: 5px;
+          font-size: 16px;
+         transition: background-color 0.3s ease;
+        }
+
+    #exit-button:hover {
+         background-color: #d32f2f; 
+
+           }
+  </style>
+</head>
+<body>
+    <div id="main-container">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <img src="vjclogo.png" alt="Logo" id="header-logo">
+            <div id="header-title">VJC-BOT</div>
+            <br>
+            <br>
+            <div id="sidebar-buttons">
+            
+              <button class="sidebar-btn">ChatBot</button>
+              <button class="sidebar-btn">Notice Board</button>
+              <button class="sidebar-btn">Academic Calander</button>
+              <button class="sidebar-btn">Change Password</button>
+              <button class="sidebar-btn">Logout</button>
+            </div>
+    
+        </div>
+       
+    
+        <!-- Chat Container -->
+        <div id="chat-container">
+            <!-- Chat Box -->
+            <div id="chat-box"></div>
+
+            <!-- Chat Input -->
+            <div id="chat-input">
+                <input type="text" id="message-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+        <!-- <button id="exit-button">Exit</button> -->
+    </div>
+
+    <script>
+        // DOM Elements
+        const chatBox = document.getElementById('chat-box');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+        
+        // Append message to chat
+        function appendMessage(content, className) {
+            const messageDiv = document.createElement('div');
+            messageDiv.textContent = content;
+            messageDiv.classList.add('message', className);
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the latest message
+        }
+
+        // Handle user message submission
+        function handleSendMessage() {
+            const userMessage = messageInput.value.trim();
+            if (userMessage) {
+                appendMessage(userMessage, 'user-message');
+                setTimeout(() => {
+                    appendMessage(userMessage, 'bot-message');
+                }, 500); // Simulate bot response delay
+                messageInput.value = ''; // Clear input
+            }
+        }
+
+        // Event Listeners
+        sendButton.addEventListener('click', handleSendMessage);
+        messageInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                handleSendMessage();
+            }
+        });
+ </script>
+</body>
+</html>
