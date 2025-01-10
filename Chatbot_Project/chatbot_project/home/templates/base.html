@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>VJC BOT</title>
+    <link rel="stylesheet" href={% static 'css/styles.css' %}>
+</head>
+<body>
+    <div id="main-container">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <img src="{% static 'images/vjclogo.png' %}" alt="Logo" id="header-logo">
+            <div id="header-title">VJC-BOT</div>
+            <br>
+            <br>
+            <div id="sidebar-buttons">
+            
+              <button class="sidebar-btn">ChatBot</button>
+              <button class="sidebar-btn">Notice Board</button>
+              <button class="sidebar-btn">Academic Calander</button>
+              <button class="sidebar-btn">Change Password</button>
+              <button class="sidebar-btn">Logout</button>
+            </div>
+    
+        </div>
+       
+    
+        <!-- Chat Container -->
+        <div id="chat-container">
+            <!-- Chat Box -->
+            <div id="chat-box"></div>
+            <!-- Chat Input -->
+            <div id="chat-input">
+                <input type="text" id="message-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+        <!-- <button id="exit-button">Exit</button> -->
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+    </form>
+    
+    <script src="{% static "js/chat_window.js" %}">
+       
+    </script>
+
+        <!-- CSRF Token -->
+        <script type="text/javascript">
+            var csrf_token = '{{ csrf_token }}';  // Embed CSRF token in the template
+        </script>
+    
+</body>
+</html>
