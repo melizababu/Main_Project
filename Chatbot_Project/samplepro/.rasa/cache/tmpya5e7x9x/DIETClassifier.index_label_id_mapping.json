@@ -1,0 +1,21 @@
+{
+  "0": "affirm",
+  "1": "bot_challenge",
+  "2": "bus",
+  "3": "deny",
+  "4": "enquire_hostel",
+  "5": "faq_address",
+  "6": "faq_admissioncriteria",
+  "7": "faq_contact",
+  "8": "faq_placement",
+  "9": "get_bus",
+  "10": "get_bus1",
+  "11": "goodbye",
+  "12": "greet",
+  "13": "hostel",
+  "14": "hosteldouble",
+  "15": "hostelsingle",
+  "16": "hosteltriple",
+  "17": "mood_great",
+  "18": "mood_unhappy"
+}

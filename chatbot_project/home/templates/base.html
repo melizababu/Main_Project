@@ -24,8 +24,7 @@
 
     
         </div>
-       
-    
+           
         <!-- Chat Container -->
         <div id="chat-container">
 
@@ -44,14 +43,26 @@
         {% csrf_token %}
     </form>
     
-    <script src="{% static "js/chat_window.js" %}">
-       
-    </script>
+    <!-- Load external JavaScript -->
+<script src="{% static 'js/chat_window.js' %}" type="text/javascript"></script>
 
-        <!-- CSRF Token -->
-        <script type="text/javascript">
-            var csrf_token = '{{ csrf_token }}';  // Embed CSRF token in the template
-        </script>
-    
+<!-- Define the path for the PDF -->
+<script type="text/javascript">
+    var academicCalendarPDF ='static/assets/academic_calender.pdf';
+</script>
+
+
+<!-- CSRF Token -->
+<script type="text/javascript">
+    var csrf_token = '{{ csrf_token }}';  // Embed CSRF token in the template
+</script>
+
+ <!-- Event listener for "Academic Calendar" button -->
+ <!--<script type="text/javascript">
+    document.getElementById('academic-calendar-btn').addEventListener('click', function() {
+        window.open(academicCalendarPDF, "_blank");
+    });
+</script>-->
+
 </body>
 </html>

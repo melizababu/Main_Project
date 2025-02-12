@@ -1,0 +1,170 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - ok
+    - okay
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: faq_address
+  examples: |
+    - Where is VJCET located?
+    - Where is the college located?
+    - Where is Viswajyothi located?
+    - Is Viswajyothi in Ernakulam?
+
+- intent: faq_contact
+  examples: |
+    - How can I contact the admissions office?
+    - What is the college's contact number?
+    - Can you give me the college's email address?
+    - Where can I find the contact details for the college?
+
+- intent: faq_admissioncriteria
+  examples: |
+    - What are the eligibility criteria for admission?
+    - Do I need to take an entrance exam?
+    - What documents do I need to submit for admission?
+    - Can I apply without meeting all the requirements?
+
+- intent: bus
+  examples: |
+    - Bus fee
+    - What is the bus fee?
+
+- intent: get_bus
+  examples: |
+    - kakkanad
+    - kakanad
+    
+
+- intent: get_bus1
+  examples: |
+    -Thodupuzha
+    
+
+- intent: hostel
+  examples: |
+    -hostel fee
+    -hostel
+    -what are the hostel charges?
+
+- intent: hostelsingle
+  examples: |
+    -single
+    -single room
+
+- intent: hosteldouble
+  examples: |
+    -double
+    -double sharing room
+
+- intent: hosteltriple
+  examples: |
+    -triple
+    -triple sharing room
+
+- intent: enquire_hostel
+  examples: |
+    - Tell me about the hostel facilities.
+    - Is there a hostel available?
+    - Can I get details about the hostel?
+    - How is the hostel accommodation?
+    - Are hostels available for boys?
+    - Do you provide hostels for girls?
+    - What are the rules for the hostel?
+    - Is there a mess in the hostel?
+
+- intent: faq_placement
+  examples: |
+    - What are the placement opportunities at the college?
+    - Does the college have a placement cell?
+    - Which companies visit the campus for recruitment?
+    - What is the average package offered during placements?
+    - Are internships provided by the college?

@@ -1,0 +1,94 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: faq about address
+  steps:
+  - intent: faq_address
+  - action: utter_faq_address
+
+- story: faq about contact
+  steps:
+  - intent: faq_contact
+  - action: utter_faq_contact
+
+- story: faq about admission criteria
+  steps:
+  - intent: faq_admissioncriteria
+  - action: utter_faq_admissioncriteria
+
+- story: bus details
+  steps:
+  - intent: bus
+  - action: utter_bus
+  - intent: get_bus
+  - action: utter_get_bus
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: bus details
+  steps:
+  - intent: bus
+  - action: utter_bus
+  - intent: get_bus1
+  - action: utter_get_bus1
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: hostel details1
+  steps:
+  - intent: hostel
+  - action: utter_hostel
+  - intent: hostelsingle
+  - action: utter_hostelsingle
+
+- story: hostel details2
+  steps:
+  - intent: hostel
+  - action: utter_hostel
+  - intent: hosteldouble
+  - action: utter_hosteldouble
+
+- story: hostel details3
+  steps:
+  - intent: hostel
+  - action: utter_hostel
+  - intent: hosteltriple
+  - action: utter_hosteltriple
+
+- story: hostel
+  steps:
+  - intent: enquire_hostel
+  - action: utter_enquire_hostel
+
+- story: hostel
+  steps:
+  - intent: faq_placement
+  - action: utter_faq_placement

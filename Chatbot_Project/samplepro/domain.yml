@@ -1,0 +1,82 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - faq_address
+  - faq_contact
+  - faq_admissioncriteria
+  - bus
+  - get_bus
+  - get_bus1
+  - hostel
+  - hostelsingle
+  - hosteldouble
+  - hosteltriple
+  - enquire_hostel
+  - faq_placement
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_faq_address:
+  - text: "Our college is located Muvattupuzha-Thodupuzha Road Vazhakulam, PO, Muvattupuzha, Kerala 686670"
+
+  utter_faq_contact:
+  - text: "You can contact the office at office@vjcet.org or call us at +1234567890. Visit the contact page on our website for more details: https://vjcet.org/"
+
+  utter_faq_admissioncriteria:
+  - text: "To apply, you need to meet the eligibility criteria, including minimum academic qualifications. Some courses may require an entrance exam. Please check the specific course page for detailed requirements."
+
+  utter_bus:
+  - text: "Sure, can you specify the place?"
+
+  utter_get_bus:
+  - text: "The college bus fee for that particular route is 1000 per semester "
+
+  utter_get_bus1:
+  - text: "The college bus fee for that particular route is 500 per semester "
+
+  utter_hostel:
+    - text: "Please specify the type of room accommodation you are looking for:single room,double sharing room or triple sharing room"
+
+  utter_hostelsingle:
+    - text: "The rent for a single room would be 10,000 per semster "
+
+  utter_hosteldouble:
+    - text: "The rent for a double sharing room would be 7,000 per semester "
+
+  utter_hosteltriple:
+    - text: "The rent for a triple sharing room would be 5,000 per semester "
+
+  utter_enquire_hostel:
+    - text: "Our hostels provide comfortable accommodations for students,both for boys and girls. Charges start at ₹5,000 per semester, and mess facilities are included."
+
+  utter_faq_placement:
+    - text: "Our placement cell collaborates with leading companies like Infosys, TCS, and Wipro. The average package offered is 6 LPA."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

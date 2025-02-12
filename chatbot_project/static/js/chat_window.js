@@ -3,7 +3,6 @@
 const chatBox = document.getElementById('chat-box');
 const messageInput = document.getElementById('message-input');
 const sendButton = document.getElementById('send-button');
-const academicCalendarBtn = document.getElementById('academic-calendar-btn');
 
 
 // Function to append messages to the chat window
@@ -84,9 +83,12 @@ function handleSendMessage() {
         messageInput.value = '';  // Clear input
     }
 }
-  // Open Academic Calendar
-  academicCalendarBtn.addEventListener('click', () => {
-    window.open('assets/academic_calender.pdf', '_blank');
+//var academicCalendarPDF ='static/assets/academic_calender.pdf';
+document.getElementById('academic-calendar-btn').addEventListener('click', function() {
+    window.open('static/assets/academic_calender.pdf', "_blank");
+});
+document.getElementById('chatbot-btn').addEventListener('click', function() {
+    window.open('static/assets/academic_calender.pdf', "_blank");
 });
 
 
