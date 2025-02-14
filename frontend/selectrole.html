@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to VJCET</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('vjcet.jpeg') no-repeat center center/cover;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .role-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .role-buttons button {
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .role-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .role-buttons button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="vjclogo.png" alt="VJCET Logo" class="logo">
+        <h1>Welcome to Viswajyothi College of Engineering and Technology</h1>
+        <p>Established in 2001, VJCET is a premier institution providing top-notch education in engineering and technology. With excellent infrastructure, experienced faculty, and a conducive learning environment, we nurture professionals for the future.</p>
+        
+        <h2>Select Your Role</h2>
+        <div class="role-buttons">
+            <button onclick="selectRole('Student')">Student</button>
+            <button onclick="selectRole('Faculty')">Faculty</button>
+            <button onclick="selectRole('Guest')">Guest</button>
+        </div>
+        <p id="selected-role" style="margin-top: 20px; font-size: 18px; color: #333;"></p>
+    </div>
+
+    <script>
+        function selectRole(role) {
+            if (role === 'Student') {
+                window.location.href = 'stu.html';
+            } else {
+                document.getElementById('selected-role').innerText = 'You selected: ' + role;
+            }
+        }
+    </script>
+
+</body>
+</html>

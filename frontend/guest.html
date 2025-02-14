@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Registration/Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .form-container {
+            width: 320px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container label, .form-container input, .form-container select {
+            width: 100%;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Faculty Registration</h2>
+        <form id="facultyForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="button" onclick="registerFaculty()">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function registerFaculty() {
+            const form = document.getElementById("facultyForm");
+            const formData = new FormData(form);
+
+            // Convert form data to an object
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Validate password match
+            if (data.password !== data.confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Log the form data (replace this with actual registration logic if needed)
+            console.log("Faculty Registration Data:", data);
+            alert("Registration Successful!");
+
+            // Reset the form after successful registration
+            form.reset();
+        }
+    </script>
+
+</body>
+</html>
